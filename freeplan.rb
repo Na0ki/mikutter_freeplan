@@ -12,7 +12,7 @@ Plugin.create(:freeplan) do
   end
 
   filter_extract_receive_message do |slug, statuses|
-    if Plugin[:premiamuplan].spec.nil? && rand(10) == 5
+    if Plugin.filtering(:premiamu_plan, nil).first.nil? && rand(10) == 5
       statuses.push(@faq_list.sample)
     end
     [slug, statuses]
