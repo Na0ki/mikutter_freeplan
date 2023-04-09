@@ -17,7 +17,7 @@ module Plugin::FreePlan
     end
 
     def created
-      Time.now
+      @created_at ||= Time.now
     end
   end
 
